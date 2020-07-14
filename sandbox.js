@@ -1,5 +1,6 @@
-var character = 'Luigi';
-console.log(character);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) { return console.log(input); });
+var character = 'mario';
+var age = 30;
+var isBlackBelt = false;
+//Error
+// character = 20;
+character = 'Luigi';

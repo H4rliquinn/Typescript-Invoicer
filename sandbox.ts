@@ -1,7 +1,8 @@
-const character = 'mario';
-console.log(character);
+let character = 'mario';
+let age=30;
+let isBlackBelt=false;
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs);
+//Error
+// character = 20;
 
-inputs.forEach(input=>console.log(input))
+character='Luigi';
