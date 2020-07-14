@@ -6,3 +6,9 @@ let isBlackBelt=false;
 // character = 20;
 
 character='Luigi';
+
+const circ = (diameter:number) => {
+    return diameter*Math.PI;
+}
+
+console.log(circ(7.5));
