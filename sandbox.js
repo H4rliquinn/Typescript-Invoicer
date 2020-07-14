@@ -1,17 +1,8 @@
-//Explicit Types
-var characer;
-var age;
-var isLoggedIn;
-//Arrays
-var ninjas = [];
-//Union Types
+var age = 25;
+age = 'Bob';
+console.log(age);
 var mixed = [];
-mixed.push(10);
-mixed.push('Blah');
+mixed.push(5);
+mixed.push('Mario');
 console.log(mixed);
-var uid;
-//Objects
-var ninjaOne;
-ninjaOne = { name: 'Yoshi', age: 30 };
-ninjaOne = [];
-var ninjaTwo;
+var ninja;

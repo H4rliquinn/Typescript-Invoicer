@@ -1,28 +1,10 @@
-//Explicit Types
-let characer:string;
-let age:number;
-let isLoggedIn:boolean;
+let age:any=25;
+age='Bob';
+console.log(age);
 
-//Arrays
-let ninjas:string[]=[];
-
-//Union Types
-let mixed:(string|number)[]=[];
-
-mixed.push(10);
-mixed.push('Blah');
+let mixed: any[]=[];
+mixed.push(5);
+mixed.push('Mario')
 console.log(mixed);
 
-let uid:string|number;
-
-//Objects
-let ninjaOne:object;
-
-ninjaOne={name:'Yoshi',age:30};
-ninjaOne=[];
-
-let ninjaTwo:{
-    name:string,
-    age: number,
-    beltColour: string
-};
+let ninja:{name:any,age:any};
