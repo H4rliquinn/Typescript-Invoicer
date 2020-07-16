@@ -4,31 +4,6 @@ import {Payment} from './classes/Payment.js'
 import {HasFormatter} from './interfaces/HasFormatter.js'
 import { ListTemplate } from './classes/ListTemplate.js';
 
-
-//ENUM
-enum ResourceType{
-    BOOK,AUTHOR,FILM,DIRECTOR,PERSON
-}
-
-interface Resource<T>{
-    uid: number;
-    resourceType:ResourceType;
-    data:T;
-}
-
-const docOne:Resource<object>={
-    uid:1,
-    resourceType:ResourceType.BOOK,
-    data:{title:'name of the wind'}
-}
-
-const docTwo: Resource<object>={
-    uid:10,
-    resourceType:ResourceType.PERSON,
-    data:{name:'Yoshi'}
-}
-
-console.log(docOne,docTwo);
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
 //inputs
@@ -44,13 +19,25 @@ const list=new ListTemplate(ul);
 form.addEventListener('submit',(e:Event)=>{
     e.preventDefault();
 
+    let values:[string,string,number]=[tofrom.value,details.value,amount.valueAsNumber];
     let doc:HasFormatter;
     if (type.value==='invoice'){
-        doc=new Invoice(tofrom.value,details.value,amount.valueAsNumber);
+        doc=new Invoice(...values);
     }else{
-        doc=new Payment(tofrom.value,details.value,amount.valueAsNumber);
+        doc=new Payment(...values);
     }
 
     list.render(doc,type.value,'end');
 
 })
+
+
+//Tuples
+// let arr =['ryu',25,true];
+// arr[0]=false;
+
+// let tup:[string,number,boolean]=['ryu',25,true]
+// tup[0]='ken';
+
+// let student:[string,number];
+// student=['chun-li',32424]
