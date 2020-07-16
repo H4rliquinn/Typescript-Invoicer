@@ -1,6 +1,26 @@
 import { Invoice } from './classes/invoice.js';
 import { Payment } from './classes/Payment.js';
 import { ListTemplate } from './classes/ListTemplate.js';
+//ENUM
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docOne = {
+    uid: 1,
+    resourceType: ResourceType.BOOK,
+    data: { title: 'name of the wind' }
+};
+const docTwo = {
+    uid: 10,
+    resourceType: ResourceType.PERSON,
+    data: { name: 'Yoshi' }
+};
+console.log(docOne, docTwo);
 const form = document.querySelector('.new-item-form');
 //inputs
 const type = document.querySelector('#type');

@@ -4,6 +4,31 @@ import {Payment} from './classes/Payment.js'
 import {HasFormatter} from './interfaces/HasFormatter.js'
 import { ListTemplate } from './classes/ListTemplate.js';
 
+
+//ENUM
+enum ResourceType{
+    BOOK,AUTHOR,FILM,DIRECTOR,PERSON
+}
+
+interface Resource<T>{
+    uid: number;
+    resourceType:ResourceType;
+    data:T;
+}
+
+const docOne:Resource<object>={
+    uid:1,
+    resourceType:ResourceType.BOOK,
+    data:{title:'name of the wind'}
+}
+
+const docTwo: Resource<object>={
+    uid:10,
+    resourceType:ResourceType.PERSON,
+    data:{name:'Yoshi'}
+}
+
+console.log(docOne,docTwo);
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
 //inputs
